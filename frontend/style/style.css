@@ -28,7 +28,7 @@ header {
 .search input {
     border-radius: 8px;
     border: 1px, solid, #ccc;
-    width: 20rem;
+    width: 25rem;
     height: 2.6rem;
     padding-left: 1rem;
     font-size: 0.9rem;
@@ -49,4 +49,14 @@ header {
     text-decoration: none;
     font-size: 1.1rem;
     
+}
+
+.switch_theme_button img {
+    max-width: 3rem;
+    max-height: 3rem;
+}
+
+.switch_theme_button button {
+    border-radius: 20rem;
+    padding-left: 5rem;
 }
