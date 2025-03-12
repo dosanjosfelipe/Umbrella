@@ -11,16 +11,17 @@
     <title>SkyVibe | Clima</title>
 </head>
 <body>
-    <script>"/frontend/scripts/script.js"</script>
+    <script src="/frontend/scripts/script.js"> </script>
     <header>
+        <!-- Logo do Site -->
         <div class="logo">
             <a href="index.html"><img src="../assets/skyvibe-logo.png" alt="SkyVibe Logo"></a>
         </div>
-
+        <!-- Barra de Pesquisa -->
         <div class="search">
-            <input type="text" id="search_city" name="searcher" placeholder="Pesquisar localização">
+            <input type="text" id="search_city" name="searcher" placeholder="Pesquisar localização" style="padding-left: 1.5rem;">
         </div>
-
+        <!-- Barra de Navegação do Site -->
         <div>
             <nav class="navegation">
                 <a href="index.html">Clima</a>
@@ -30,12 +31,17 @@
                 <a href="nature.html">Natureza</a>
             </nav>
         </div>
-
-        
+        <!-- Botão de Mudar Tema -->
+        <div class="switch-theme"> 
+            <button onclick=switchTheme() aria-label="Alternar tema">
+                <img src="/frontend/assets/sun-icon.png" alt="Tema Claro" id="theme-icon">
+            </button>
+        </div>
+        <hr class="header-line">
 
     </header>
     <main>
-        <hr style="height: 0.1px; background-color: #cfcfcf; border: none;">
+        
     </main>
     <footer>
         

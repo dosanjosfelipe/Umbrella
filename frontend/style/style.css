@@ -1,16 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Cabin", sans-serif;
 }
 
-body {
+/* Transição */
+body, header {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Temas do corpo */
+body.light-theme {
     background-color: #F5F5F5;
     font-family: "Cabin", sans-serif;
 }
 
-header {
+body.dark-theme {
+    background-color: #2e2c36;
+    font-family: "Cabin", sans-serif;
+    color: #E0E0E0;
+
+}
+
+/* Temas do cabeçalho */
+header.light-theme {
     display: flex;
     background-color: snow;
     text-align: left;
@@ -19,30 +35,71 @@ header {
     height: 4.8rem;
 }
 
+header.dark-theme {
+    display: flex;
+    background-color: #1e1d24;
+    text-align: left;
+    align-items: center;
+    justify-content: left;
+    height: 4.8rem;
+    color: #ecebeb;
+}
+
+/* Temas da linha */
+body.light-theme hr {
+    border: none; 
+    height: 2px; 
+    background-color: #cfcfcf; 
+}
+
+body.dark-theme hr {
+    border: none; 
+    height: 2px; 
+    background-color: #2b2931; 
+}
+
+/* Logo */
 .logo img {
     max-height: 3.7rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
+    margin-left: 2rem;
 }
+
+/* Barra de Pesquisa */
 
 .search input {
+    background-color: #ffffff;
     border-radius: 8px;
-    border: 1px, solid, #ccc;
+    border: 1px solid #ccc; 
     width: 25rem;
     height: 2.6rem;
-    padding-left: 1rem;
+    margin-left: 2rem;
+    margin-right: 10rem;
     font-size: 0.9rem;
-
+    color: #333;
 }
+
+/* Tema da barra de pesquisa */
+body.dark-theme .search input {
+    background-color: #2e2c36;
+    color: #e0e0e0; 
+    border: 1px solid #555;
+    box-sizing: border-box;
+}
+
 
 .search input::placeholder {
     color: #9d9d9d;
-    padding-left: 0rem;
+    margin-left: 10rem;
+    
 }
 
-.navegation a {
+body.dark-theme .search input::placeholder {
+    color: #b0b0b0;
+}
 
-    padding-left: 1.7rem;
+/* Barra de Navegação */
+.navegation a {
+    margin-left: 1.7rem;
     color: 	#525252;
     justify-content: center;
     font-weight: bold;
@@ -51,12 +108,29 @@ header {
     
 }
 
-.switch_theme_button img {
-    max-width: 3rem;
-    max-height: 3rem;
+/* Tema da Barra de Navegação */
+body.dark-theme .navegation a {
+    margin-left: 1.7rem;
+    color: 	#b6b6b6;
+    justify-content: center;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    
 }
 
-.switch_theme_button button {
-    border-radius: 20rem;
-    padding-left: 5rem;
+/* Botão de mudar tema */
+.switch-theme button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 12rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+#theme-icon {
+    width: 40px;
+    height: 40px;
 }
