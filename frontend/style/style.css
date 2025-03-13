@@ -47,15 +47,15 @@ header.dark-theme {
 
 /* Temas da linha */
 body.light-theme hr {
-    border: none; 
-    height: 2px; 
+    border: none;
+    height: 1px; 
     background-color: #cfcfcf; 
 }
 
 body.dark-theme hr {
+    height: 1px;
     border: none; 
-    height: 2px; 
-    background-color: #2b2931; 
+    background-color: #3c3b3d; 
 }
 
 /* Logo */
@@ -65,7 +65,6 @@ body.dark-theme hr {
 }
 
 /* Barra de Pesquisa */
-
 .search input {
     background-color: #ffffff;
     border-radius: 8px;
@@ -73,12 +72,11 @@ body.dark-theme hr {
     width: 25rem;
     height: 2.6rem;
     margin-left: 2rem;
-    margin-right: 10rem;
+    margin-right: 7rem;
     font-size: 0.9rem;
     color: #333;
 }
 
-/* Tema da barra de pesquisa */
 body.dark-theme .search input {
     background-color: #2e2c36;
     color: #e0e0e0; 
@@ -99,7 +97,7 @@ body.dark-theme .search input::placeholder {
 
 /* Barra de Navegação */
 .navegation a {
-    margin-left: 1.7rem;
+    margin-left: 1.2rem;
     color: 	#525252;
     justify-content: center;
     font-weight: bold;
@@ -108,9 +106,8 @@ body.dark-theme .search input::placeholder {
     
 }
 
-/* Tema da Barra de Navegação */
 body.dark-theme .navegation a {
-    margin-left: 1.7rem;
+    margin-left: 1.2rem;
     color: 	#b6b6b6;
     justify-content: center;
     font-weight: bold;
@@ -119,12 +116,140 @@ body.dark-theme .navegation a {
     
 }
 
+/* underline de cada elemento da barra de navegação */
+/* underline clima */
+.link-clima:hover{
+    text-decoration: underline;
+    color: rgb(77, 77, 255);
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+}
+
+body.dark-theme .link-clima:hover {
+    text-decoration: underline;
+    color: rgb(77, 77, 255);
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+}
+
+/* underline radar */
+.link-radar:hover {
+    text-decoration: underline;
+    color: rgb(77, 77, 255);
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+}
+
+body.dark-theme .link-radar:hover {
+    text-decoration: underline;
+    color: rgb(77, 77, 255);
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+}
+
+/* underline historico */
+.link-historico:hover {
+    text-decoration: underline;
+    color: rgb(77, 77, 255);
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+}
+
+body.dark-theme .link-historico:hover {
+    text-decoration: underline;
+    color: rgb(77, 77, 255);
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+}
+
+/* underline saude */
+.link-saude:hover {
+    text-decoration: underline;
+    color: rgb(77, 77, 255);
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+}
+
+body.dark-theme .link-saude:hover {
+    text-decoration: underline;
+    color: rgb(77, 77, 255);
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+}
+
+/* underline natureza */
+.link-natureza:hover {
+    text-decoration: underline;
+    color: rgb(77, 77, 255);
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+}
+
+body.dark-theme .link-natureza:hover {
+    text-decoration: underline;
+    color: rgb(77, 77, 255);
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+}
+
+.link-natureza {
+    margin-right: 4rem;
+}
+
+/* Trocar unidade de medida */
+.measure-button {
+    margin-left: 1.2rem;
+    background: none;
+    border: none;
+    color: #525252;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+}
+
+.measure-button:hover {
+    text-decoration: underline;
+    color: rgb(77, 77, 255);
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+}
+
+body.dark-theme .measure-button {
+    background: none;
+    border: none;
+    color: #b6b6b6;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+}
+
+body.dark-theme .measure-button:hover {
+    text-decoration: underline;
+    color: rgb(77, 77, 255);
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+}
+
 /* Botão de mudar tema */
 .switch-theme button {
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: 12rem; 
+    margin-left: 6.5rem; 
     display: flex; 
     align-items: center; 
     justify-content: center;

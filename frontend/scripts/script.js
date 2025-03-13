@@ -13,7 +13,7 @@ function switchTheme() {
         body.classList.add('dark-theme');
         header.classList.remove('light-theme');
         header.classList.add('dark-theme');
-        themeIcon.src = '/frontend/assets/moon-icon.png';
+        themeIcon.src = '/frontend/assets/header/moon-icon.png';
         themeIcon.alt = 'Tema Escuro';
         
         localStorage.setItem('theme', 'dark');
@@ -23,7 +23,7 @@ function switchTheme() {
         body.classList.add('light-theme');
         header.classList.remove('dark-theme');
         header.classList.add('light-theme');
-        themeIcon.src = '/frontend/assets/sun-icon.png';
+        themeIcon.src = '/frontend/assets/header/sun-icon.png';
         themeIcon.alt = 'Tema Claro';
         
         localStorage.setItem('theme', 'light');
@@ -40,12 +40,12 @@ window.onload = function() {
     if (savedTheme === 'dark') {
         body.classList.add('dark-theme');
         header.classList.add('dark-theme');
-        themeIcon.src = '/frontend/assets/moon-icon.png';
+        themeIcon.src = '/frontend/assets/header/moon-icon.png';
         themeIcon.alt = 'Tema Escuro';
     } else {
         body.classList.add('light-theme');
         header.classList.add('light-theme');
-        themeIcon.src = '/frontend/assets/sun-icon.png';
+        themeIcon.src = '/frontend/assets/header/sun-icon.png';
         themeIcon.alt = 'Tema Claro';
     }
 };
