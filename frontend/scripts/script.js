@@ -74,3 +74,45 @@ window.onload = function() {
 
     }
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+    const main = document.querySelector("main");
+    const links = document.querySelectorAll(".navegation a");
+    const logo = document.querySelector(".logo a"); 
+
+    function loadPage(page) {
+        fetch(`${page}.html`)
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, "text/html");
+                const newMainContent = doc.querySelector("main").innerHTML;
+                main.innerHTML = newMainContent;
+                window.history.pushState({ page }, "", `#${page}`);
+                updateActiveLink(page);
+            })
+            .catch(error => console.error("Erro ao carregar a página:", error));
+    }
+
+    function updateActiveLink(page) {
+        links.forEach(link => {
+            link.classList.toggle("active", link.getAttribute("href").includes(page));
+        });
+    }
+
+    links.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const page = this.getAttribute("href").replace(".html", "");
+            loadPage(page);
+        });
+    });
+
+    logo.addEventListener("click", function (event) {
+        event.preventDefault();
+        loadPage("index");
+    });
+
+    const initialPage = window.location.hash.replace("#", "") || "index";
+    loadPage(initialPage);
+});

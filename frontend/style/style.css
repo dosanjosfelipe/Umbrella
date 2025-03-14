@@ -9,6 +9,7 @@
 
 /* Transição */
 body, header {
+    animation: fadeIn 0.5s ease-in-out;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 

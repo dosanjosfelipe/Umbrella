@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="../style/style.css" as="style">
     <link rel="stylesheet" href="../style/style.css">
     <meta name="keywords" content="weather, rain, sun, fog, today">
     <meta name="description" content="A Weather website">
@@ -11,48 +12,7 @@
     <title>SkyVibe | Radar</title>
 </head>
 <body>
-    <script src="../scripts/script.js"> </script>
-    <header>
-
-        <!-- Logo do Site -->
-        <div class="logo">
-            <a href="index.html"><img src="../assets//header/umbrella-logo-light-theme.png" alt="Umbrella Logo" id="logo-img"></a>
-        </div>
-
-        <!-- Barra de Pesquisa -->
-        <div class="search">
-            <div class="search-container">
-                <img src="../assets/header/search-icon.png" alt="Ícone de pesquisa" class="search-icon">
-                <input type="text" id="search_city" name="searcher" placeholder="Pesquisar localização">
-            </div>
-        </div>
-
-        <!-- Barra de Navegação do Site -->
-        <div>
-            <nav class="navegation">
-                <a class="link-clima" href="index.html">Clima</a>
-                <a class="link-radar" href="radar.html">Radar</a>
-                <a class="link-historico" href="history.html">Histórico</a>
-                <a class="link-saude" href="health.html">Saúde</a>
-                <a class="link-natureza" href="nature.html">Natureza</a>
-            </nav>
-        </div>
-
-        <!-- Botão de Mudar Unidades Medidas -->
-        <div class="unit-of-measure">
-            <button class="measure-button" onclick="switchUnit()">Celsius</button>
-            <button class="measure-button" onclick="switchUnit()">Fahrenheit</button>
-        </div>
-
-        <!-- Botão de Mudar Tema -->
-        <div class="switch-theme"> 
-            <button onclick=switchTheme() aria-label="Alternar tema">
-                <img src="/frontend/assets//header/sun-icon.png" alt="Tema Claro" id="theme-icon">
-            </button>
-        </div>
-
-    </header>
-    <hr class="header-line">
+    <script src="../scripts/script.js" defer></script>
     <main>
         
     </main>
