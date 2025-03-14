@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
-
+/** General Config */
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +8,7 @@
 
 /* Transição */
 body, header {
+    flex-wrap: wrap;
     animation: fadeIn 0.5s ease-in-out;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -54,11 +54,12 @@ body.light-theme hr {
 }
 
 body.dark-theme hr {
-    height: 1px;
-    border: none; 
-    background-color: #3c3b3d; 
+    background-color: #3c3b3d;
+    border: none;
+    height: 1px; 
 }
 
+/** Header style */
 /* Logo */
 .logo img {
     max-height: 2.5rem;
@@ -122,17 +123,10 @@ body.dark-theme .search-icon {
     font-weight: bold;
     text-decoration: none;
     font-size: 1.1rem;
-    
 }
 
 body.dark-theme .navegation a {
-    margin-left: 1.2rem;
     color: 	#b6b6b6;
-    justify-content: center;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1.1rem;
-    
 }
 
 .navegation a.active {
@@ -151,34 +145,10 @@ body.dark-theme .navegation a.active {
     border-radius: 5px;
 }
 
-/* underline de cada elemento da barra de navegação */
-/* underline clima */
-.link-clima:hover{
-    text-decoration: underline;
-    color: rgb(77, 77, 255);
-    text-underline-offset: 7px;
-    text-decoration-thickness: 2px;
-    border-radius: 5px;
-}
 
-body.dark-theme .link-clima:hover {
-    text-decoration: underline;
-    color: rgb(77, 77, 255);
-    text-underline-offset: 7px;
-    text-decoration-thickness: 2px;
-    border-radius: 5px;
-}
 
 /* underline radar */
 .link-radar:hover {
-    text-decoration: underline;
-    color: rgb(77, 77, 255);
-    text-underline-offset: 7px;
-    text-decoration-thickness: 2px;
-    border-radius: 5px;
-}
-
-body.dark-theme .link-radar:hover {
     text-decoration: underline;
     color: rgb(77, 77, 255);
     text-underline-offset: 7px;
@@ -195,14 +165,6 @@ body.dark-theme .link-radar:hover {
     border-radius: 5px;
 }
 
-body.dark-theme .link-historico:hover {
-    text-decoration: underline;
-    color: rgb(77, 77, 255);
-    text-underline-offset: 7px;
-    text-decoration-thickness: 2px;
-    border-radius: 5px;
-}
-
 /* underline saude */
 .link-saude:hover {
     text-decoration: underline;
@@ -212,24 +174,8 @@ body.dark-theme .link-historico:hover {
     border-radius: 5px;
 }
 
-body.dark-theme .link-saude:hover {
-    text-decoration: underline;
-    color: rgb(77, 77, 255);
-    text-underline-offset: 7px;
-    text-decoration-thickness: 2px;
-    border-radius: 5px;
-}
-
 /* underline natureza */
 .link-natureza:hover {
-    text-decoration: underline;
-    color: rgb(77, 77, 255);
-    text-underline-offset: 7px;
-    text-decoration-thickness: 2px;
-    border-radius: 5px;
-}
-
-body.dark-theme .link-natureza:hover {
     text-decoration: underline;
     color: rgb(77, 77, 255);
     text-underline-offset: 7px;
@@ -262,21 +208,7 @@ body.dark-theme .link-natureza:hover {
 }
 
 body.dark-theme .measure-button {
-    background: none;
-    border: none;
     color: #b6b6b6;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 0;
-    text-decoration: none;
-}
-
-body.dark-theme .measure-button:hover {
-    text-decoration: underline;
-    color: rgb(77, 77, 255);
-    text-underline-offset: 7px;
-    text-decoration-thickness: 2px;
-    border-radius: 5px;
 }
 
 /* Botão de mudar tema */
@@ -293,4 +225,273 @@ body.dark-theme .measure-button:hover {
 #theme-icon {
     width: 40px;
     height: 40px;
+}
+
+/** Main Style */
+/* index box */
+.now-weather-box {
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10rem;
+    margin-top: 4rem;
+    height: 20rem;
+    width: 26rem;
+}
+
+.today-weather-box {
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 2rem;
+    margin-top: 4rem;
+    height: 20rem;
+    width: 44.28rem;
+}
+
+.week-weather-box {
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10rem;
+    margin-right: 10rem;
+    width: calc(100% - 20rem);
+    margin-top: 2rem;
+
+    height: 30rem;
+}
+
+.polen-box {
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    height: 20rem;
+    width: 26rem;
+}
+
+.ar-quality-box {
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    height: 20rem;
+    width: 44.28rem;
+}
+
+body.dark-theme .now-weather-box{
+    background-color: #1e1d24;
+}
+
+body.dark-theme .today-weather-box {
+    background-color: #1e1d24;
+}
+
+body.dark-theme .week-weather-box {
+    background-color: #1e1d24;
+}
+
+body.dark-theme .polen-box{
+    background-color: #1e1d24;
+}
+
+body.dark-theme .ar-quality-box{
+    background-color: #1e1d24;
+}
+
+.radar-box {
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 7rem;
+    margin-right: 7rem;
+    width: calc(100% - 14rem);
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    height: 40rem;
+}
+body.dark-theme .radar-box {
+    background-color: #1e1d24;
+} 
+
+.history-box {
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10rem;
+    margin-right: 10rem;
+    width: calc(100% - 20rem);
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    height: 33rem;
+}
+
+body.dark-theme .history-box {
+    background-color: #1e1d24;
+}
+
+.complete-ar-quality-box {
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10rem;
+    margin-top: 4rem;
+    height: 33rem;
+    width: 46rem;
+}
+
+body.dark-theme .complete-ar-quality-box {
+    background-color: #1e1d24;
+}
+
+.complete-polen-box1 {
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 2rem;
+    margin-top: 4rem;
+    height: 33rem;
+    width: 24.28rem;
+}
+
+body.dark-theme .complete-polen-box1 {
+    background-color: #1e1d24;
+} 
+
+.complete-polen-box2 {
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10rem;
+    margin-right: 10rem;
+    width: calc(100% - 20rem);
+    margin-top: 2rem;
+    height: 33rem;
+}
+
+body.dark-theme .complete-polen-box2 {
+    background-color: #1e1d24;
+}
+
+.complete-polen-box3 {
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10rem;
+    margin-right: 10rem;
+    width: calc(100% - 20rem);
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    height: 33rem;
+}
+
+body.dark-theme .complete-polen-box3 {
+    background-color: #1e1d24;
+}
+
+.sun-box {
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10rem;
+    margin-top: 4rem;
+    height: 20rem;
+    width: 35.14rem;
+}
+
+.moon-box {
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 2rem;
+    margin-top: 4rem;
+    height: 20rem;
+    width: 35.14rem;
+}
+
+.wind-box {
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    height: 20rem;
+    width: 35.14rem;
+}
+
+.sea-box {
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    height: 20rem;
+    width: 35.14rem;
+}
+
+body.dark-theme .sun-box {
+    background-color: #1e1d24;
+}
+
+body.dark-theme .moon-box {
+    background-color: #1e1d24;
+}
+
+body.dark-theme .wind-box {
+    background-color: #1e1d24;
+}
+
+body.dark-theme .sea-box {
+    background-color: #1e1d24;
 }

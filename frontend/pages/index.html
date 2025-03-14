@@ -9,7 +9,11 @@
     <meta name="description" content="A Weather website">
     <meta name="author" content="Felipe dos Anjos">
     <meta name="robots" content="index, follow">
-    <title>SkyVibe | Clima</title>
+    <link rel="icon" type="image/png" href="../assets/header/umbrella-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+    <title>Umbrella</title>
 </head>
 <body>
     <script src="../scripts/script.js" defer></script>
@@ -49,14 +53,18 @@
         <!-- Botão de Mudar Tema -->
         <div class="switch-theme"> 
             <button onclick=switchTheme() aria-label="Alternar tema">
-                <img src="/frontend/assets//header/sun-icon.png" alt="Tema Claro" id="theme-icon">
+                <img src="../assets/header/umbrella-logo-light-theme.png" alt="Tema Claro" id="theme-icon">
             </button>
         </div>
 
     </header>
     <hr class="header-line">
     <main>
-        <p>ola</p>
+        <div class="now-weather-box"></div>
+        <div class="today-weather-box"></div>
+        <div class="week-weather-box"></div>
+        <div class="polen-box"></div>
+        <div class="ar-quality-box"></div>
     </main>
     <footer>
         
