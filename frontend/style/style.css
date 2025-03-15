@@ -15,12 +15,18 @@ body, header {
 
 /* Temas do corpo */
 body.light-theme {
-    background-color: #F5F5F5;
+    background-image: url("../assets/main/light-theme-background.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
     font-family: "Cabin", sans-serif;
 }
 
 body.dark-theme {
-    background-color: #2e2c36;
+    background-image: url("../assets/main/dark-theme-background.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
     font-family: "Cabin", sans-serif;
     color: #E0E0E0;
 
@@ -70,9 +76,9 @@ body.dark-theme hr {
 /* Barra de Pesquisa */
 .search-container {
     position: relative;
-    width: 25rem; 
+    width: 20rem; 
     margin-left: 2rem; 
-    margin-right: 5.5rem;
+    margin-right: 4rem;
 }
 
 .search input {
@@ -184,7 +190,7 @@ body.dark-theme .navegation a.active {
 }
 
 .link-natureza {
-    margin-right: 4rem;
+    margin-right: 3rem;
 }
 
 /* Trocar unidade de medida */
@@ -216,15 +222,63 @@ body.dark-theme .measure-button {
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: 6.5rem; 
+    margin-left: 4.5rem; 
     display: flex; 
     align-items: center; 
     justify-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.switch-theme button:hover {
+    transform: scale(1.1);
 }
 
 #theme-icon {
     width: 40px;
     height: 40px;
+    transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* Login button */
+.login-button {
+    width: 10rem;
+    height: 2.57rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #096edb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 4.5rem;
+    font-size: 20px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.login-button b {
+    margin-left: 1.2rem;
+}
+
+.login-button:hover {
+    background-color: #0b5eb6;
+}
+
+.login-button img {
+    width: 1.5rem;
+    height: 1.5rem;
+    justify-content: left;
+    margin-left: 1.5rem;
+}
+
+body.dark-theme .login-button {
+    background-color: #317ecc;
+}
+
+body.dark-theme .login-button:hover {
+    background-color: #276aac;
 }
 
 /** Main Style */
@@ -318,6 +372,7 @@ body.dark-theme .ar-quality-box{
     background-color: #1e1d24;
 }
 
+/* radar box */
 .radar-box {
     background-color: white;
     border-radius: 15px;
@@ -336,6 +391,7 @@ body.dark-theme .radar-box {
     background-color: #1e1d24;
 } 
 
+/* history box */
 .history-box {
     background-color: white;
     border-radius: 15px;
@@ -355,6 +411,7 @@ body.dark-theme .history-box {
     background-color: #1e1d24;
 }
 
+/* health box */
 .complete-ar-quality-box {
     background-color: white;
     border-radius: 15px;
@@ -426,6 +483,7 @@ body.dark-theme .complete-polen-box3 {
     background-color: #1e1d24;
 }
 
+/* nature box */
 .sun-box {
     background-color: white;
     border-radius: 15px;
@@ -494,4 +552,214 @@ body.dark-theme .wind-box {
 
 body.dark-theme .sea-box {
     background-color: #1e1d24;
+}
+
+/* login box */
+.login-box {
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 15rem;
+    margin-right: 15rem;
+    width: calc(100% - 30rem);
+    margin-top: 5.5rem;
+    margin-bottom: 5rem;
+    height: 35rem;
+}
+
+.left {
+    background-color: white; 
+    width: 60%; 
+    height: 100%; 
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+.right {
+    background-color: white;
+    width: 40%;
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/** login page style */
+.right h1 {
+    display: flex;
+    justify-content: left;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    color: #525252;
+    margin-bottom: 1rem;
+
+}
+
+.inputs input {
+    width: 19rem;
+    padding: 15px;
+    margin-left: 3rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 1rem;
+}
+
+.label-login {
+    font-size: 14px;
+    margin-top: 1rem;
+    margin-right: 3.2rem;
+    text-decoration: none;
+}
+
+.login-check {
+    justify-content: center;
+    justify-items: center;
+}
+.label-login input[type="checkbox"] {
+    margin-left: 3rem;
+    width: 17px;
+    height: 17px;
+    border: 0.5px solid #000000;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    vertical-align: middle;
+}
+
+.forgot-pass {
+    text-decoration: none;
+    color: #096edb;
+    font-weight: bold;
+}
+
+.forgot-pass:hover {
+    color: #0b5eb6;
+}
+
+/* Estilo do botão */
+.sign-button {
+    padding: 15px;
+    background-color: #096edb;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    width: 19rem;
+    margin-bottom: 1rem;
+}
+
+.sign-button:hover {
+    background-color: #0b5eb6;
+}
+
+.label-login2 {
+    margin-left: 7rem;
+    font-size: 14px;
+}
+
+.label-login2 a{
+
+    font-size: 14px;
+    color: #096edb;
+}
+
+.label-login2 a:hover {
+    color: #0b5eb6;
+}
+
+
+
+body.dark-theme .left {
+    background-color: #1e1d24; 
+
+  }
+
+body.dark-theme .right {
+    background-color: #1e1d24;
+
+}
+
+body.dark-theme .right h1 {
+    color: #b6b6b6;
+}
+
+body.dark-theme .inputs input {
+    background-color: #2e2c36;
+    color: #e0e0e0;
+    border: 1px solid #555;
+
+}
+
+body.dark-theme  .label-login input[type="checkbox"]{
+    background-color: #555;
+}
+
+.forgot-pass {
+    text-decoration: none;
+    color: #096edb;
+    font-weight: bold;
+}
+
+.forgot-pass:hover {
+    color: #0b5eb6;
+}
+
+/* Estilo do botão */
+.sign-button {
+    padding: 15px;
+    background-color: #096edb;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    width: 19rem;
+    margin-bottom: 1rem;
+}
+
+.sign-button:hover {
+    background-color: #0b5eb6;
+}
+
+.label-login2 {
+    margin-left: 7rem;
+    font-size: 14px;
+}
+
+.label-login2 a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #096edb;
+}
+
+.label-login2 a:hover {
+    color: #0b5eb6;
+}
+
+.left img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.right a img {
+    width: 27px;
+    margin-left: 3rem;
+    margin-top: 4rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.right a img:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
 }

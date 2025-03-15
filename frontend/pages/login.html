@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="../style/style.css" as="style">
+    <link rel="stylesheet" href="../style/style.css">
+    <meta name="keywords" content="weather, rain, sun, fog, today">
+    <meta name="description" content="A Weather website">
+    <meta name="author" content="Felipe dos Anjos">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="../assets/header/umbrella-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+    <title>Login | Umbrella</title>
+</head>
+<body>
+    <script src="../scripts/script.js" defer></script>
+
+    <main>
+        <div class="login-box">
+            <div class="half left">
+                <img src="../assets/main/login-illustration.png" alt="A woman with a umbrella">
+
+            </div>
+            <div class="half right">
+                <a href="index.html"><img src="../assets/main/login-back-arrow.png" alt="A arrow to back a page"></a>
+                <h1>Entrar</h1>
+                <div class="inputs">
+                    <input type="text" placeholder="Email" class="email">
+                    <input type="text" placeholder="Senha" class="password">
+                </div>
+                <label class="label-login">
+                    <input type="checkbox" class="login-check"> Lembrar de mim
+                </label>
+                
+                <a href="forgot-pass.html" class="forgot-pass">Esqueceu a senha?</a>
+                <br>
+                
+                <button onclick="signIn()" class="sign-button">Entrar</button>
+                <br>
+                <label class="label-login2">
+                    Novo aqui? <a href="new-user.html"> Criar uma Conta</a>
+                </label>
+            </div>
+          </div>
+    </main>
+</body>
+</html>

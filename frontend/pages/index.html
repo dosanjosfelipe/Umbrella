@@ -46,15 +46,19 @@
 
         <!-- Botão de Mudar Unidades Medidas -->
         <div class="unit-of-measure">
-            <button class="measure-button" onclick="switchUnit()">Celsius</button>
-            <button class="measure-button" onclick="switchUnit()">Fahrenheit</button>
+            <button class="measure-button" onclick="switchUnit()"><b>C°</b></button>
+            <button class="measure-button" onclick="switchUnit()"><b>F°</b></button>
         </div>
 
         <!-- Botão de Mudar Tema -->
         <div class="switch-theme"> 
-            <button onclick=switchTheme() aria-label="Alternar tema">
+            <button onclick="switchTheme()" aria-label="Alternar tema">
                 <img src="../assets/header/umbrella-logo-light-theme.png" alt="Tema Claro" id="theme-icon">
             </button>
+        </div>
+
+        <div>
+        <a href="login.html" class="login-button"><img src="../assets/header/login-icon-dark-theme.png" alt="login icon"><b>Login</b></a>
         </div>
 
     </header>
