@@ -13,36 +13,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
-    <title>Umbrella | Login</title>
+    <title>Umbrella | Criar Nova Conta</title>
 </head>
 <body>
     <script src="../scripts/script.js" defer></script>
-
     <main>
         <div class="login-box">
             <div class="half left">
-                <img src="../assets/main/login-illustration.png" alt="A woman with a umbrella">
-
+                <img src="../assets/main/new-acc-illustration.png" alt="A woman with a umbrella" class="new-acc-img">
             </div>
             <div class="half right">
-                <a href="index.html"><img src="../assets/main/login-back-arrow.png" alt="A arrow to back a page"></a>
-                <h1>Entrar</h1>
+                <a href="login.html"><img src="../assets/main/login-back-arrow.png" alt="A arrow to back a page" class="new-acc-arrow"></a>
+                <h1>Nova Conta</h1>
                 <div class="inputs">
+                    <input type="text" placeholder="Nome" class="name">
                     <input type="text" placeholder="Email" class="email">
                     <input type="text" placeholder="Senha" class="password">
+                    <input type="text" placeholder="Confirmar Senha" class="confirm-password">
                 </div>
                 <label class="label-login">
                     <input type="checkbox" class="login-check"> Lembrar de mim
                 </label>
-                
-                <a href="forgot-password.html" class="forgot-pass">Esqueceu a senha?</a>
-                <br>
-                
                 <button onclick="signIn()" class="sign-button">Entrar</button>
-                <br>
-                <label class="label-login2">
-                    Novo aqui? <a href="new-user.html"> Criar uma Conta</a>
-                </label>
             </div>
           </div>
     </main>

@@ -12,6 +12,13 @@ body, header {
     animation: fadeIn 0.5s ease-in-out;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+body {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+body.loaded {
+    opacity: 1;
+}
 
 /* Temas do corpo */
 body.light-theme {
@@ -282,7 +289,7 @@ body.dark-theme .login-button:hover {
 }
 
 /** Main Style */
-/* index box */
+/** index Page */
 .now-weather-box {
     background-color: white;
     border-radius: 15px;
@@ -372,7 +379,7 @@ body.dark-theme .ar-quality-box{
     background-color: #1e1d24;
 }
 
-/* radar box */
+/** Radar Page */
 .radar-box {
     background-color: white;
     border-radius: 15px;
@@ -391,7 +398,7 @@ body.dark-theme .radar-box {
     background-color: #1e1d24;
 } 
 
-/* history box */
+/** History Page */
 .history-box {
     background-color: white;
     border-radius: 15px;
@@ -411,7 +418,7 @@ body.dark-theme .history-box {
     background-color: #1e1d24;
 }
 
-/* health box */
+/** Health Page */
 .complete-ar-quality-box {
     background-color: white;
     border-radius: 15px;
@@ -483,7 +490,7 @@ body.dark-theme .complete-polen-box3 {
     background-color: #1e1d24;
 }
 
-/* nature box */
+/** Nature Page */
 .sun-box {
     background-color: white;
     border-radius: 15px;
@@ -554,7 +561,7 @@ body.dark-theme .sea-box {
     background-color: #1e1d24;
 }
 
-/* login box */
+/** login page */
 .login-box {
     border-radius: 8px;
     display: flex;
@@ -585,7 +592,25 @@ body.dark-theme .sea-box {
     border-bottom-right-radius: 8px;
 }
 
-/** login page style */
+.left img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.right a img {
+    width: 27px;
+    margin-left: 3rem;
+    margin-top: 4rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.right a img:hover {
+    transform: scale(1.1);
+}
+
 .right h1 {
     display: flex;
     justify-content: left;
@@ -640,7 +665,6 @@ body.dark-theme .sea-box {
     color: #0b5eb6;
 }
 
-/* Estilo do botão */
 .sign-button {
     padding: 15px;
     background-color: #096edb;
@@ -711,7 +735,6 @@ body.dark-theme  .label-login input[type="checkbox"]{
     color: #0b5eb6;
 }
 
-/* Estilo do botão */
 .sign-button {
     padding: 15px;
     background-color: #096edb;
@@ -745,21 +768,104 @@ body.dark-theme  .label-login input[type="checkbox"]{
     color: #0b5eb6;
 }
 
-.left img {
-    max-width: 100%;
+/** Recover Password Page */
+.recover-password-button {
+    padding: 15px;
+    background-color: #096edb;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    margin-left: 3rem;
+    width: 19rem;
+    margin-bottom: 1rem;
+}
+
+.recover-password-button:hover {
+    background-color: #0b5eb6;
+}
+
+.key-img {
+    width: 35rem;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
+    margin-left: 2rem;
 }
 
-.right a img {
+.right .new-acc-arrow {
     width: 27px;
     margin-left: 3rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
     cursor: pointer;
     transition: transform 0.2s;
 }
 
-.right a img:hover {
-    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+.new-acc-img {
+    width: 35rem;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-left: 2rem;
+}
+
+/* Estilos gerais do footer */
+footer {
+    background-color: snow;
+    color: #525252;
+    padding: 30px 0;
+}
+
+/* Container principal */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Seções individuais do footer */
+.footer-section {
+    width: 22%;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+/* Títulos das seções */
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Estilo dos links */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #525252;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Rodapé inferior */
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
 }

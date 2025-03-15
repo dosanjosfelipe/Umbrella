@@ -1,0 +1,129 @@
+/* Resetando margens e espaçamento padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo a fonte base para a página */
+body {
+    font-family: 'Cabin', sans-serif;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    line-height: 1.6;
+    padding: 30px;
+}
+
+/* Estilizando os títulos principais */
+h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 8px;
+}
+
+/* Estilizando o parágrafo */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #34495e;
+}
+
+/* Estilizando a lista não ordenada */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    color: #7f8c8d;
+    display: flex;
+    align-items: center;
+}
+
+/* Adicionando um ícone moderno e sutil */
+li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    color: #3498db;
+    margin-left: 0;
+}
+
+/* Links */
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Estilizando o cabeçalho */
+header {
+    background-color: #3498db;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 1rem;
+    color: #95a5a6;
+    margin-bottom: 30px;
+}
+
+/* Caixa de conteúdo */
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Estilizando a página para dispositivos móveis */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    li {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 30px;
+    }
+}

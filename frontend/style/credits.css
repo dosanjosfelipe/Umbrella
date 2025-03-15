@@ -1,0 +1,123 @@
+/* Resetando margens e espaçamento padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo a fonte base para a página */
+body {
+    font-family: 'Cabin', sans-serif;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    line-height: 1.6;
+    padding: 40px;
+}
+
+/* Estilizando o container */
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilizando o título principal */
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilizando o título secundário */
+h2 {
+    font-size: 1.8rem;
+    color: #3498db;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Estilizando os parágrafos */
+p {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Estilizando a lista de créditos */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+    color: #7f8c8d;
+}
+
+/* Adicionando ícones modernos na lista */
+li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    color: #3498db;
+    margin-left: 0;
+}
+
+/* Estilizando os links */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    font-size: 1rem;
+    color: #95a5a6;
+    margin-top: 40px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    li {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 25px;
+    }
+}

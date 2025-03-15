@@ -76,6 +76,7 @@ window.onload = function() {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("loaded");
     const main = document.querySelector("main");
     const links = document.querySelectorAll(".navegation a");
     const logo = document.querySelector(".logo a"); 
