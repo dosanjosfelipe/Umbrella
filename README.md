@@ -1,1 +1,1 @@
-<p>O frontend esta basicamente feito, vou estudar um pouco mais de backend e termino o projeto.</p>
+<p>O frontend está basicamente feito, vou estudar um pouco mais de backend e termino o projeto.</p>
