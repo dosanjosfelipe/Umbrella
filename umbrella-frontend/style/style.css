@@ -158,7 +158,14 @@ body.dark-theme .navegation a.active {
     border-radius: 5px;
 }
 
-
+/* underline Clima */
+.link-clima:hover {
+    text-decoration: underline;
+    color: rgb(77, 77, 255);
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    border-radius: 5px;
+}
 
 /* underline radar */
 .link-radar:hover {
@@ -815,7 +822,7 @@ body.dark-theme  .label-login input[type="checkbox"]{
 footer {
     background-color: snow;
     color: #525252;
-    padding: 30px 0;
+    padding: 15px 0;
 }
 
 /* Container principal */
@@ -825,7 +832,7 @@ footer {
     flex-wrap: wrap;
     max-width: 1200px;
     margin: auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 /* Seções individuais do footer */
@@ -861,11 +868,22 @@ footer {
     text-decoration: underline;
 }
 
-
-
 /* Rodapé inferior */
 .footer-bottom {
     text-align: center;
-    padding: 15px;
+    padding: 3px;
     font-size: 14px;
+}
+body.dark-theme footer{
+    background-color: #1e1d24;
+    color: #ecebeb;
+}
+body.dark-theme .footer-section ul li a {
+    color: #a8a8a8;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+body.dark-theme .footer-section ul li a:hover {
+    text-decoration: underline;
 }

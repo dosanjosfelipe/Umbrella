@@ -3,25 +3,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Cabin", sans-serif;
 }
 
 /* Definindo a fonte base para a página */
 body {
-    font-family: 'Cabin', sans-serif;
-    background-color: #ecf0f1;
-    color: #2c3e50;
-    line-height: 1.6;
+    background-image: url("../assets/main/light-theme-background.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
     padding: 40px;
 }
 
 /* Estilizando o container */
 .container {
+    margin-top: 6rem;
     background-color: #fff;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     max-width: 800px;
-    margin: 0 auto;
+    margin-left: 18rem;
 }
 
 /* Estilizando o título principal */
