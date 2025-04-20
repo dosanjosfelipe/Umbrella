@@ -672,6 +672,20 @@ body.dark-theme .sea-box {
     color: #0b5eb6;
 }
 
+.google-icon {
+    display: flex;
+    align-items: center;
+}
+
+.google-icon a img {
+    height: 2.3rem;
+    width: 2.3rem;
+    margin-top: 2rem;
+    margin-left: 11rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
 .sign-button {
     padding: 15px;
     background-color: #096edb;
