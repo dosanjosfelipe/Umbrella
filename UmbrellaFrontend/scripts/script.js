@@ -117,3 +117,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const initialPage = window.location.hash.replace("#", "") || "index";
     loadPage(initialPage);
 });
+
+function updatePlaceholder() {
+    const input = document.getElementById('search_city');
+    if (window.innerWidth > 1000 && window.innerWidth < 1300) {
+      input.placeholder = 'Pesquisar';
+    } else if (window.innerWidth < 1000) {
+      input.placeholder = '';
+    } else {
+        input.placeholder = 'Pesquisar Local';
+    }
+  }
+  
+  window.addEventListener('resize', updatePlaceholder);
+  window.addEventListener('DOMContentLoaded', updatePlaceholder);
