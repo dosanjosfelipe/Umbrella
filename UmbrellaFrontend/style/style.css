@@ -659,7 +659,7 @@ body.dark-theme .sea-box {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: white; 
     width: 65vw;
-    height: 82vh;
+    height: 81vh;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     display: flex;
@@ -674,7 +674,7 @@ body.dark-theme .sea-box {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: white;
     width: 40vw;
-    height: 82vh;
+    height: 81vh;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
