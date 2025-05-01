@@ -22,7 +22,7 @@ body.loaded {
 
 /* Temas do corpo */
 body {
-    background-image: url("../assets/main/light-theme-background.png");
+    background-color: #f3f4f5;
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
@@ -30,35 +30,36 @@ body {
 }
 
 body.dark-theme {
-    background-image: url("../assets/main/dark-theme-background.png"); 
-    color: #E0E0E0;
+    background-color: #1E1E1E; 
+    color: #FFFFFF;
 
 }
 
 /* Temas do cabeçalho */
 header {
     display: flex;
-    background-color: snow;
+    background-color: #FFFFFF;
     text-align: left;
     align-items: center;
     justify-content: left;
     height: 11vh;
+    
 }
 
 header.dark-theme {
-    background-color: #1e1d24;
+    background-color: #1A1A1A;
 }
 
 /* Temas da linha */
 body hr {
     border: none;
-    height: 1px; 
-    background-color: #cfcfcf; 
+    height: 1.2px;
+    background: linear-gradient(to right, transparent, #97c3ea, transparent);
+    width: 100%;
 }
 
 body.dark-theme hr {
-    background-color: #3c3b3d;
-
+    background: linear-gradient(to right, transparent, #402946, transparent);
 }
 
 /** Header style */
@@ -79,7 +80,7 @@ body.dark-theme hr {
 .search input {
     background-color: #ffffff;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #626262;
     width: 100%; 
     height: 2.6rem;
     padding-left: 2.5rem; 
@@ -89,17 +90,17 @@ body.dark-theme hr {
 }
 
 body.dark-theme .search input {
-    background-color: #2e2c36;
+    background-color: #252525;
     color: #e0e0e0;
-    border: 1px solid #555;
+    border: 1px solid #6b6b6b;
 }
 
 .search input::placeholder {
-    color: #9d9d9d;
+    color: #626262;
 }
 
 body.dark-theme .search input::placeholder {
-    color: #b0b0b0;
+    color: #e0e0e0;
 }
 
 /* Ícone de Pesquisa */
@@ -120,7 +121,7 @@ body.dark-theme .search-icon {
 
 .navegation a {
     margin-left: 1.2rem;
-    color: 	#525252;
+    color: 	#000000;
     justify-content: center;
     font-weight: bold;
     text-decoration: none;
@@ -128,7 +129,7 @@ body.dark-theme .search-icon {
 }
 
 body.dark-theme .navegation a {
-    color: 	#b6b6b6;
+    color: 	#FFFFFF;
 }
 
 .navegation a.active {
@@ -193,7 +194,7 @@ body.dark-theme .navegation a {
     margin-left: 1.2rem;
     background: none;
     border: none;
-    color: #525252;
+    color: #000000;
     font-size: 16px;
     cursor: pointer;
     padding: 0;
@@ -208,9 +209,18 @@ body.dark-theme .navegation a {
     border-radius: 5px;
 }
 
+body.dark-theme .link-clima:hover, body.dark-theme .link-historico:hover, 
+body.dark-theme .link-natureza:hover, body.dark-theme .link-radar:hover, 
+body.dark-theme .link-saude:hover {
+    color: #982acb; 
+}
+
+body.dark-theme .navegation a.active {
+    color: #a524c5;
+}
 
 body.dark-theme .measure-button {
-    color: #b6b6b6;
+    color: #ffffff;
 }
 
 /* Botão de mudar tema */
@@ -322,6 +332,10 @@ body.dark-theme .measure-button {
         height: 5vh;
         margin-left: 1.5rem;
     }
+
+    body.dark-theme .logo {
+        content: url("../assets/header/umbrella-icon-dark-theme.png");
+    }
     
     .login-box {
         padding-left: 2vw;
@@ -372,11 +386,11 @@ body.dark-theme .measure-button {
 }
 
 body.dark-theme .login-button {
-    background-color: #317ecc;
+    background-color: #81298d;
 }
 
 body.dark-theme .login-button:hover {
-    background-color: #276aac;
+    background-color: #6f2478;
 }
 
 /** Main Style */
@@ -446,23 +460,23 @@ body.dark-theme .login-button:hover {
 }
 
 body.dark-theme .now-weather-box{
-    background-color: #1e1d24;
+    background-color: #252525;
 }
 
 body.dark-theme .today-weather-box {
-    background-color: #1e1d24;
+    background-color: #252525;
 }
 
 body.dark-theme .week-weather-box {
-    background-color: #1e1d24;
+    background-color: #252525;
 }
 
 body.dark-theme .polen-box{
-    background-color: #1e1d24;
+    background-color: #252525;
 }
 
 body.dark-theme .ar-quality-box{
-    background-color: #1e1d24;
+    background-color: #252525;
 }
 
 /** Radar Page */
@@ -481,7 +495,7 @@ body.dark-theme .ar-quality-box{
 
 }
 body.dark-theme .radar-box {
-    background-color: #1e1d24;
+    background-color: #252525;
 } 
 
 /** History Page */
@@ -503,7 +517,7 @@ body.dark-theme .radar-box {
 }
 
 body.dark-theme .history-box {
-    background-color: #1e1d24;
+    background-color: #252525;
 }
 
 /** Health Page */
@@ -549,19 +563,19 @@ body.dark-theme .history-box {
 }
 
 body.dark-theme .complete-ar-quality-box {
-    background-color: #1e1d24;
+    background-color: #252525;
 }
 
 body.dark-theme .complete-polen-box1 {
-    background-color: #1e1d24;
+    background-color: #252525;
 } 
 
 body.dark-theme .complete-polen-box2 {
-    background-color: #1e1d24;
+    background-color: #252525;
 }
 
 body.dark-theme .complete-polen-box3 {
-    background-color: #1e1d24;
+    background-color: #252525;
 }
 
 /** Nature Page */
@@ -614,19 +628,19 @@ body.dark-theme .complete-polen-box3 {
 }
 
 body.dark-theme .sun-box {
-    background-color: #1e1d24;
+    background-color: #252525;
 }
 
 body.dark-theme .moon-box {
-    background-color: #1e1d24;
+    background-color: #252525;
 }
 
 body.dark-theme .wind-box {
-    background-color: #1e1d24;
+    background-color: #252525;
 }
 
 body.dark-theme .sea-box {
-    background-color: #1e1d24;
+    background-color: #252525;
 }
 
 /** login page */
@@ -645,12 +659,12 @@ body.dark-theme .sea-box {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: white; 
     width: 65vw;
-    height: 80vh;
+    height: 82vh;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
   }
 
 .right {
@@ -660,7 +674,7 @@ body.dark-theme .sea-box {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: white;
     width: 40vw;
-    height: 80vh;
+    height: 82vh;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
@@ -709,17 +723,6 @@ body.dark-theme .sea-box {
     justify-content: center;
     justify-items: center;
 }
-.label-login input[type="checkbox"] {
-    width: 17px;
-    height: 17px;
-    border: 0.5px solid #000000;
-    border-radius: 2px;
-    position: relative;
-    cursor: pointer;
-    background-color: #fff;
-    transition: all 0.3s ease;
-    vertical-align: middle;
-}
 
 .forgot-pass {
     text-decoration: none;
@@ -731,18 +734,11 @@ body.dark-theme .sea-box {
     color: #0b5eb6;
 }
 
-.google-icon {
-    display: flex;
-    align-items: center;
-}
-
 .google-icon a img {
-    height: 2.3rem;
-    width: 2.3rem;
-    margin-top: 2rem;
-    margin-left: 9vw;
-    cursor: pointer;
-    transition: transform 0.2s;
+    height: 6vh;
+    width: 12.90vw;
+    margin-left: 4vw;
+    margin-top: 3vh;
 }
 
 .sign-button {
@@ -777,20 +773,18 @@ body.dark-theme .sea-box {
     color: #0b5eb6;
 }
 
-
-
 body.dark-theme .left {
-    background-color: #1e1d24; 
+    background-color: #252525; 
 
   }
 
 body.dark-theme .right {
-    background-color: #1e1d24;
+    background-color: #252525;
 
 }
 
 body.dark-theme .right h1 {
-    color: #b6b6b6;
+    color: #ffffff;
 }
 
 body.dark-theme .inputs input {
@@ -798,10 +792,6 @@ body.dark-theme .inputs input {
     color: #e0e0e0;
     border: 1px solid #555;
 
-}
-
-body.dark-theme  .label-login input[type="checkbox"]{
-    background-color: #555;
 }
 
 .forgot-pass {
@@ -845,6 +835,35 @@ body.dark-theme  .label-login input[type="checkbox"]{
     color: #0b5eb6;
 }
 
+.arrow-nu img {
+    
+    margin-top: -10px;
+}
+
+body.dark-theme .forgot-pass {
+    color: #096edb;
+}
+
+body.dark-theme .forgot-pass:hover {
+    color: #0b5eb6;
+}
+
+body.dark-theme .label-login2 a {
+    color: #096edb;
+}
+
+body.dark-theme .label-login2 a:hover {
+    color: #0b5eb6;
+}
+
+body.dark-theme .sign-button {
+    background-color: #096edb;
+}
+
+body.dark-theme .sign-button:hover {
+    background-color: #0b5eb6;
+}
+
 /** Recover Password Page */
 .recover-password-button {
     padding: 15px;
@@ -863,10 +882,18 @@ body.dark-theme  .label-login input[type="checkbox"]{
     background-color: #0b5eb6;
 }
 
+body.dark-theme .recover-password-button {
+    background-color: #7f32a3;
+}
+
+body.dark-theme .recover-password-button:hover {
+    background-color: #672984;
+}
+
 /* Estilos gerais do footer */
 footer {
-    background-color: snow;
-    color: #525252;
+    background-color: #FFFFFF;
+    color: #000000;
     padding: 15px 0;
 }
 
@@ -904,7 +931,7 @@ footer {
 }
 
 .footer-section ul li a {
-    color: #525252;
+    color: #000000;
     text-decoration: none;
     transition: 0.3s;
 }
@@ -920,11 +947,11 @@ footer {
     font-size: 14px;
 }
 body.dark-theme footer{
-    background-color: #1e1d24;
-    color: #ecebeb;
+    background-color: #1A1A1A;
+    color: #ffffff;
 }
 body.dark-theme .footer-section ul li a {
-    color: #a8a8a8;
+    color: #ffffff;
     text-decoration: none;
     transition: 0.3s;
 }

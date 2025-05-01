@@ -22,23 +22,35 @@
             <div class="left">
                 <img src="../assets/main/new-acc-illustration.png" alt="A woman with a umbrella" class="new-acc-img">
             </div>
-            <div class="half right">
-                <a href="login.html"><img src="../assets/main/login-back-arrow.png" alt="A arrow to back a page"></a>
-                <h1>Nova Conta</h1>
-                <div class="inputs">
-                    <input type="text" placeholder="Nome" class="name">
-                    <input type="text" placeholder="Email" class="email">
-                    <input type="text" placeholder="Senha" class="password">
-                </div>
-                <label class="label-login">
-                    <input type="checkbox" class="login-check"> Lembrar de mim
-                </label>
-                <button onclick="signIn()" class="sign-button">Entrar</button>
-                <div class="google-icon">
-                    <a href="#">
-                        <img src="../assets/main/google.png" alt="Icone do Google">
+            <div class="right">
+                <form action="#" method="POST" class="form">
+
+                    <a href="login.html" class="arrow-nu">
+                        <img src="../assets/main/login-back-arrow.png" alt="A arrow to back a page">
                     </a>
-                </div>
+
+                    <h1>Criar Conta</h1>
+
+                    <div class="inputs">
+                        <input type="text" name="name" placeholder="Nome" class="name">
+                        <input type="email" name="email" placeholder="Email" class="email">
+                        <input type="password" name="password" placeholder="Senha" class="password">
+                    </div>
+                    
+                    <a href="forgot-password.html" class="forgot-pass">Esqueceu a senha?</a>
+                    <br>
+                    
+                    <button type="submit" class="sign-button">Entrar</button>
+                    <br>
+                    <label class="label-login2">
+                        Novo aqui? <a href="new-user.html"> Criar uma Conta</a>
+                    </label>
+                    <div class="google-icon">
+                        <a href="#">
+                            <img src="../assets/main/web_light_sq_SU@4x.png" alt="Icone do Google">
+                        </a>
+                    </div>
+                </form>
             </div>
           </div>
     </main>
