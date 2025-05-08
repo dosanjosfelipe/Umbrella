@@ -119,6 +119,9 @@ body.dark-theme .search-icon {
 
 /* navegação entre páginas */
 
+.navegation {
+    margin-left: 3.5rem;
+}
 .navegation a {
     margin-left: 1.2rem;
     color: 	#000000;
@@ -127,6 +130,7 @@ body.dark-theme .search-icon {
     text-decoration: none;
     font-size: 1.1rem;
 }
+
 
 body.dark-theme .navegation a {
     color: 	#FFFFFF;
@@ -186,27 +190,7 @@ body.dark-theme .navegation a {
 }
 
 .link-natureza {
-    margin-right: 3rem;
-}
-
-/* Trocar unidade de medida */
-.measure-button {
-    margin-left: 1.2rem;
-    background: none;
-    border: none;
-    color: #000000;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 0;
-    text-decoration: none;
-}
-
-.measure-button:hover {
-    text-decoration: underline;
-    color: rgb(77, 77, 255);
-    text-underline-offset: 7px;
-    text-decoration-thickness: 2px;
-    border-radius: 5px;
+    margin-right: 2rem;
 }
 
 body.dark-theme .link-clima:hover, body.dark-theme .link-historico:hover, 
@@ -228,11 +212,12 @@ body.dark-theme .measure-button {
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: 4.5rem; 
+    margin-left: 4rem; 
     display: flex; 
     align-items: center; 
     justify-content: center;
     transition: transform 0.3s ease-in-out;
+    margin-right: 1rem;
 }
 
 .switch-theme button:hover {
@@ -279,8 +264,84 @@ body.dark-theme .measure-button {
     margin-left: 1.5rem;
 }
 
+.menu {
+    position: absolute;
+    top: 18px;
+    right: 40px; 
+    display: flex;
+    align-items: center;
+}
+  
+#menu-toggle {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+  
+#menu-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+  
+#menu-icon {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+  
+#dropdown-menu {
+    position: absolute;
+    top: calc(100% + 5px); 
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 10;
+    min-width: 150px; 
+}
+  
+#dropdown-menu.hidden{
+    display: none;
+}
+  
+#dropdown-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+  
+#dropdown-menu button:hover {
+    background-color: #f0f0f0;
+}
+
+body.dark-theme #dropdown-menu {
+    background-color: #252525;
+    border: 1px solid #000000;
+    color: white;
+}
+
+body.dark-theme #dropdown-menu button:hover  {
+    background-color: #2e2e2e;
+}
+
+  
+
 @media (max-width: 768px) {
     .login-button {
+        display: none;
+    }
+
+    .user-name {
         display: none;
     }
   
@@ -318,6 +379,10 @@ body.dark-theme .measure-button {
         margin-left: 1.5rem;
         justify-content: center;
     }
+
+    .user-name {
+        display: none;
+    }
   
     .login-button b {
         display: none;
@@ -345,6 +410,9 @@ body.dark-theme .measure-button {
   }
 
 @media (max-width: 1200px) {
+    .user-name {
+        font-size: 2vh;
+    }
     .link-natureza {
         margin-right: 2rem;
     }
@@ -403,6 +471,10 @@ body.dark-theme .login-button:hover {
     padding: 6vh;
 }
 .now-weather-box {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -764,13 +836,71 @@ body.dark-theme .sea-box {
 }
 
 .label-login2 a{
-
     font-size: 14px;
     color: #096edb;
 }
 
 .label-login2 a:hover {
     color: #0b5eb6;
+}
+
+.invalid-user {
+    align-items: center;
+    align-content: center;
+    margin-top: 2vh;
+    height: 2.7rem;
+    border: 1px solid #ccc;
+    background-color: #c83c3c;
+    border-radius: 8px;
+    font-size: 1rem; 
+}
+
+.invalid-user span {
+    margin-left: 2vw;
+    text-align: center;
+    color: white;
+}
+
+.user-name {
+    text-align: center;
+    margin-left: 4vw;
+    font-size: 3vh;
+    background: linear-gradient(270deg, #00c6ff, #0072ff, #00c6ff);
+    background-size: 600% 600%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 8s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body.dark-theme .user-name {
+    text-align: center;
+    margin-left: 3vw;
+    font-size: 3vh;
+
+    background: linear-gradient(270deg, #b400fb, #8000ff, #b400fb);
+    background-size: 600% 600%;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientMove 8s ease infinite; 
 }
 
 body.dark-theme .left {
@@ -958,4 +1088,29 @@ body.dark-theme .footer-section ul li a {
 
 body.dark-theme .footer-section ul li a:hover {
     text-decoration: underline;
+}
+
+
+/** DENTRO DAS BOXES DE CLIMA */
+
+.now-weather-box #city{
+    font-size: 30px;
+
+}
+
+.temp-container {
+    display: flex;
+    align-items: center;     
+    justify-content: center; 
+    gap: 4px;                
+    font-size: 6rem;         
+}
+  
+.temp-container img {
+    width: 10rem;             
+    height: auto;
+}
+
+.now-weather-box .feels_like-container {
+    margin-bottom: 10px;
 }

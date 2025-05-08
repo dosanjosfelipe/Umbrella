@@ -2,6 +2,8 @@ var light_logo = "../assets/header/umbrella-logo-light-theme.png"
 var dark_logo = "../assets/header/umbrella-logo-dark-theme.png"
 var light_theme_icon = "../assets/header/sun-icon.png"
 var dark_theme_icon = "../assets/header/moon-icon.png"
+var dark_theme_menu = "../assets/header/menu-dark-theme.png"
+var light_theme_menu = "../assets/header/menu.png"
 
 function switchTheme() {
     // Pega o elemento body e header
@@ -10,7 +12,8 @@ function switchTheme() {
     
     // Pega o elemento de imagem
     const themeIcon = document.getElementById("theme-icon");
-    const logo = document.getElementById("logo-img")
+    const logo = document.getElementById("logo-img");
+    const menu = document.getElementById("menu-icon");
 
     // Verifica qual tema está atualmente aplicado
     if (body.classList.contains("light-theme") && header.classList.contains("light-theme")) {
@@ -22,6 +25,7 @@ function switchTheme() {
         themeIcon.src = dark_theme_icon;
         themeIcon.alt = "Tema Escuro";
         logo.src = dark_logo
+        menu.src = dark_theme_menu
         
         localStorage.setItem("theme", "dark");
     } else {
@@ -33,6 +37,7 @@ function switchTheme() {
         themeIcon.src = light_theme_icon;
         themeIcon.alt = "Tema Claro";
         logo.src = light_logo
+        menu.src = light_theme_menu
 
         localStorage.setItem("theme", "light");
         
@@ -47,6 +52,7 @@ window.onload = function() {
     const header = document.querySelector("header");
     const themeIcon = document.getElementById("theme-icon");
     const logo = document.getElementById("logo-img");
+    const menu = document.getElementById("menu-icon");
 
     //continuar a linha em baixo da pagina que esta
     links.forEach(link => {
@@ -64,6 +70,7 @@ window.onload = function() {
         themeIcon.src = dark_theme_icon;
         themeIcon.alt = "Tema Escuro";
         logo.src = dark_logo
+        menu.src = dark_theme_menu
 
     } else {
         body.classList.add("light-theme");
@@ -71,6 +78,7 @@ window.onload = function() {
         themeIcon.src = light_theme_icon;
         themeIcon.alt = "Tema Claro";
         logo.src = light_logo
+        menu.src = light_theme_menu
 
     }
 };
@@ -79,7 +87,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("loaded");
     const main = document.querySelector("main");
     const links = document.querySelectorAll(".navegation a");
-    const logo = document.querySelector(".logo a"); 
+    const logo = document.querySelector(".logo a");
+    const toggleButton = document.getElementById("menu-toggle");
+    const dropdownMenu = document.getElementById("dropdown-menu");
 
     function loadPage(page) {
         fetch(`${page}.html`)
@@ -101,14 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    links.forEach(link => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
-            const page = this.getAttribute("href").replace(".html", "");
-            loadPage(page);
-        });
-    });
-
     logo.addEventListener("click", function (event) {
         event.preventDefault();
         loadPage("index");
@@ -116,6 +118,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const initialPage = window.location.hash.replace("#", "") || "index";
     loadPage(initialPage);
+
+    toggleButton.addEventListener("click", function (e) {
+        e.stopPropagation();
+        dropdownMenu.classList.toggle("hidden");
+    });
+
+    // Fecha o menu se clicar fora
+    document.addEventListener("click", function () {
+        dropdownMenu.classList.add("hidden");
+    });
 });
 
 function updatePlaceholder() {
@@ -131,3 +143,96 @@ function updatePlaceholder() {
   
   window.addEventListener("resize", updatePlaceholder);
   window.addEventListener("DOMContentLoaded", updatePlaceholder);
+
+function deleteCookie(name) {
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("logout").addEventListener("click", function () {
+        deleteCookie("UserId");
+        deleteCookie("UserName");
+        window.location.href = "/weather";
+    });
+});
+
+function translateMain(main) {
+    const translate = {
+        Thunderstorm: "Tempestade",
+        Drizzle: "Garoa",
+        Rain: "Chuva",
+        Snow: "Neve",
+        Clear: "Céu limpo",
+        Clouds: "Nublado",
+        Mist: "Névoa",
+        Smoke: "Fumaça",
+        Haze: "Neblina",
+        Dust: "Poeira",
+        Fog: "Nevoeiro",
+        Sand: "Areia",
+        Ash: "Cinzas",
+        Squall: "Rajadas",
+        Tornado: "Tornado"
+    };
+    return translate[main] || main;
+}
+
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+}
+
+function fetchWeather(lat, lon) {
+    fetch('http://localhost:8080/api/local', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ latitude: lat, longitude: lon }),
+        credentials: 'include'
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Erro ao enviar localização');
+        return response.json();
+    })
+    .then(data => {
+        document.getElementById('city').textContent = data.name;
+        document.getElementById('temp').textContent = Math.round(data.main.temp - 273.15);
+        document.getElementById('icon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        document.getElementById('feels_like').textContent = Math.round(data.main.feels_like - 273.15);
+        document.getElementById('main').textContent = translateMain(data.weather[0].main);
+        document.getElementById('description').textContent = data.weather[0].description;
+        document.getElementById('temp-max').textContent = Math.round(data.temp_max - 273.15);
+        document.getElementById('temp-min').textContent = Math.round(data.temp_min - 273.15);
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
+}
+
+// Tenta obter dos cookies
+const lat = getCookie("UserLat");
+const lon = getCookie("UserLon");
+
+// Se já tiver os cookies, usa eles
+if (lat && lon) {
+    fetchWeather(lat, lon);
+} else if (navigator.geolocation) {
+    // Se não houver cookies, tenta obter a localização via navegador
+    navigator.geolocation.getCurrentPosition(
+        function(position) {
+            const newLat = position.coords.latitude;
+            const newLon = position.coords.longitude;
+
+            // Envia a localização ao backend; cookies serão definidos lá
+            fetchWeather(newLat, newLon);
+        },
+        function(error) {
+            alert("Erro ao obter localização: " + error.message);
+        }
+    );
+} else {
+    alert("Geolocalização não é suportada pelo navegador.");
+}

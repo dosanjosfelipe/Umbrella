@@ -20,7 +20,7 @@
     <header>
         <!-- Logo do Site -->
         <div class="logo">
-            <a href="index.html"><img src="../assets//header/umbrella-logo-light-theme.png" alt="Umbrella Logo" id="logo-img"></a>
+            <a href="weather"><img src="../assets//header/umbrella-logo-light-theme.png" alt="Umbrella Logo" id="logo-img"></a>
         </div>
 
         <!-- Barra de Pesquisa -->
@@ -34,11 +34,11 @@
         <!-- Barra de Navegação do Site -->
         <div>
             <nav class="navegation">
-                <a class="link-clima" href="index.html">Clima</a>
-                <a class="link-radar" href="radar.html">Radar</a>
-                <a class="link-historico" href="history.html">Histórico</a>
-                <a class="link-saude" href="health.html">Saúde</a>
-                <a class="link-natureza" href="nature.html">Natureza</a>
+                <a class="link-clima" href="weather">Clima</a>
+                <a class="link-radar" href="radar">Radar</a>
+                <a class="link-historico" href="history">Histórico</a>
+                <a class="link-saude" href="health">Saúde</a>
+                <a class="link-natureza" href="nature">Natureza</a>
                 <div id="content"></div>
             </nav>
         </div>
@@ -56,27 +56,38 @@
             </button>
         </div>
 
-        <div>
-        <a href="login.html" class="login-button"><img src="../assets/header/login-icon-dark-theme.png" alt="login icon"><b>Entrar</b></a>
+        <div th:if="${name == null}">
+            <a href="login" class="login-button">
+                <img src="../assets/header/login-icon-dark-theme.png" alt="login icon">
+                <b>Entrar</b>
+            </a>
+        </div>
+        
+        <div th:if="${name != null}" class="user-name">
+            <b th:text="${hour}"></b> <span> </span> <b th:text="${name}"></b>
+            <div class="menu">
+                <button id="menu-toggle">
+                    <img src="../assets/header/menu.png" alt="A menu icon" id="menu-icon">
+                </button>
+                <ul id="dropdown-menu" class="hidden">
+                    <li><button id="logout">Sair</button></li>
+                </ul>
+            </div>
         </div>
     </header>
     
     <hr class="header-line">
 
     <main>
-        <div class="index-container1">
-            <div class="now-weather-box"></div>
-            <div class="today-weather-box"></div>
+        <div class="health-containers">
+            <div class="complete-ar-quality-box"></div>
+            <div class="complete-polen-box1"></div>
         </div>
-
-        <div class="index-container2">
-            <div class="week-weather-box"></div>
+        <div class="health-containers">
+            <div class="complete-polen-box2"></div>
         </div>
-        
-
-        <div class="index-container3">
-            <div class="polen-box"></div>
-            <div class="ar-quality-box"></div>
+        <div class="health-containers">
+            <div class="complete-polen-box3"></div>
         </div>
     </main>
 
@@ -91,9 +102,9 @@
         <div class="footer-section links">
             <h2>Links Rápidos</h2>
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="policy.html">Política de Privacidade</a></li>
-                <li><a href="credits.html">Créditos e Fontes</a></li>
+                <li><a href="weather">Início</a></li>
+                <li><a href="policy">Política de Privacidade</a></li>
+                <li><a href="credits">Créditos e Fontes</a></li>
             </ul>
         </div>
     </div>

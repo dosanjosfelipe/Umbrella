@@ -13,43 +13,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
-    <title>Umbrella | Nova Conta</title>
+    <title>Umbrella | Login</title>
 </head>
 <body>
     <script src="../scripts/script.js" defer></script>
     <main>
         <div class="login-box">
             <div class="left">
-                <img src="../assets/main/new-acc-illustration.png" alt="A woman with a umbrella" class="new-acc-img">
+                <img src="../assets/main/login-illustration.png" alt="A woman with a umbrella" id="login-img">
             </div>
             <div class="right">
-                <form action="#" method="POST" class="form">
+                <form action="logged-in" method="POST" class="form">
 
-                    <a href="login.html" class="arrow-nu">
+                    <a href="weather">
                         <img src="../assets/main/login-back-arrow.png" alt="A arrow to back a page">
                     </a>
 
-                    <h1>Criar Conta</h1>
+                    <h1>Entrar</h1>
 
                     <div class="inputs">
-                        <input type="text" name="name" placeholder="Nome" class="name">
                         <input type="email" name="email" placeholder="Email" class="email">
                         <input type="password" name="password" placeholder="Senha" class="password">
                     </div>
                     
-                    <a href="forgot-password.html" class="forgot-pass">Esqueceu a senha?</a>
+                    <a href="password" class="forgot-pass">Esqueceu a senha?</a>
                     <br>
                     
                     <button type="submit" class="sign-button">Entrar</button>
                     <br>
+                    <label class="label-login2">
+                        Novo aqui? <a href="sign-up"> Criar uma Conta</a>
+                    </label>
                     <div class="google-icon">
                         <a href="#">
-                            <img src="../assets/main/web_light_sq_SU@4x.png" alt="Icone do Google">
+                            <img src="../assets/main/web_light_sq_SI@1x.png" alt="Icone do Google">
                         </a>
+                    </div>
+                    <div th:if="${erro != null}" class="invalid-user">
+                        <span th:text="${erro}"></span>
                     </div>
                 </form>
             </div>
-          </div>
+        </div>
     </main>
 </body>
 </html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="../style/style.css" as="style">
+    <link rel="stylesheet" href="../style/style.css">
+    <meta name="keywords" content="weather, rain, sun, fog, today">
+    <meta name="description" content="A Weather website">
+    <meta name="author" content="Felipe dos Anjos">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="../assets/header/umbrella-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+    <title>Umbrella</title>
+</head>
+<body>
+    <script src="../scripts/script.js" defer></script>
+    <header>
+        <!-- Logo do Site -->
+        <div class="logo">
+            <a href="weather"><img src="../assets//header/umbrella-logo-light-theme.png" alt="Umbrella Logo" id="logo-img"></a>
+        </div>
+
+        <!-- Barra de Pesquisa -->
+        <div class="search">
+            <div class="search-container">
+                <img src="../assets/header/search-icon.png" alt="Ícone de pesquisa" class="search-icon">
+                <form action="/searched" method="POST">
+                    <input type="search" id="search_city" name="searcher" placeholder="Buscar cidade">
+                </form>
+            </div>
+        </div>
+
+        <!-- Barra de Navegação do Site -->
+        <div>
+            <nav class="navegation">
+                <a class="link-clima" href="weather">Clima</a>
+                <a class="link-radar" href="radar">Radar</a>
+                <a class="link-historico" href="history">Histórico</a>
+                <a class="link-saude" href="health">Saúde</a>
+                <a class="link-natureza" href="nature">Natureza</a>
+                <div id="content"></div>
+            </nav>
+        </div>
+
+        <!-- Botão de Mudar Tema -->
+        <div class="switch-theme"> 
+            <button onclick="switchTheme()" aria-label="Alternar tema">
+                <img src="../assets/header/umbrella-logo-light-theme.png" alt="Tema Claro" id="theme-icon">
+            </button>
+        </div>
+
+        <div th:if="${name == null}">
+            <a href="login" class="login-button">
+                <img src="../assets/header/login-icon-dark-theme.png" alt="login icon">
+                <b>Entrar</b>
+            </a>
+        </div>
+        
+        <div th:if="${name != null}" class="user-name">
+            <b th:text="${hour}"></b> <span> </span> <b th:text="${name}"></b>
+            <div class="menu">
+                <button id="menu-toggle">
+                    <img src="../assets/header/menu.png" alt="A menu icon" id="menu-icon">
+                </button>
+                <div id="dropdown-menu" class="hidden">
+                    <button id="logout">SAIR</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <hr class="header-line">
+
+    <main>
+        <div class="index-container1">
+            <!-- Caixa de Clima Atual -->
+            <div class="now-weather-box">
+                <div>
+                    <b><span id="city"></span></b>
+                </div>
+                <div class="temp-container">
+                    <b><span id="temp"></span></b>
+                     <span class="temp">°</span> 
+                     <img src="" id="icon">
+                    </div>
+                <div class="feels_like-container">
+                    <span>Sensação: </span>
+                    <span id="feels_like"></span>°
+                </div>
+                <div>
+                    <span id="main"></span>
+                    <span> | </span>
+                    <span id="description"></span>
+                </div>
+            </div>
+    
+            <!-- Caixa de Clima do Dia -->
+            <div class="today-weather-box">
+                <h2>Clima de Hoje</h2>
+                <div><strong>Temperatura Máxima:</strong> <span id="temp-max"></span> °C</div>
+                <div><strong>Temperatura Mínima:</strong> <span id="temp-min"></span> °C</div>
+            </div>
+        </div>
+    
+        <div class="index-container2">
+            <div class="week-weather-box">
+                <h2>Previsão para a Semana</h2>
+                <!-- Aqui você pode adicionar previsões semanais, por exemplo -->
+            </div>
+        </div>
+    
+        <div class="index-container3">
+            <div class="polen-box"></div>
+            <div class="ar-quality-box"></div>
+        </div>
+    </main>
+
+    <hr class="header-line">
+    <footer>
+            <div class="footer-container">
+        <div class="footer-section about">
+            <h2>Sobre Nós</h2>
+            <p>Seu site de previsão do tempo confiável. Informações atualizadas para você se planejar melhor.</p>
+        </div>
+
+        <div class="footer-section links">
+            <h2>Links Rápidos</h2>
+            <ul>
+                <li><a href="weather">Início</a></li>
+                <li><a href="policy">Política de Privacidade</a></li>
+                <li><a href="credits">Créditos e Fontes</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Umbrella. Todos os direitos reservados.</p>
+    </div>
+    </footer>
+</body>
+</html>
