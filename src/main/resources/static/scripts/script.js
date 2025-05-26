@@ -158,21 +158,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function translateMain(main) {
     const translate = {
-        Thunderstorm: "Tempestade",
-        Drizzle: "Garoa",
-        Rain: "Chuva",
-        Snow: "Neve",
-        Clear: "Céu limpo",
-        Clouds: "Nublado",
-        Mist: "Névoa",
-        Smoke: "Fumaça",
-        Haze: "Neblina",
-        Dust: "Poeira",
-        Fog: "Nevoeiro",
-        Sand: "Areia",
-        Ash: "Cinzas",
-        Squall: "Rajadas",
-        Tornado: "Tornado"
+        Thunderstorm: "tempestade",
+        Drizzle: "garoa",
+        Rain: "chuva",
+        Snow: "neve",
+        Clear: "céu limpo",
+        Clouds: "nublado",
+        Mist: "névoa",
+        Smoke: "fumaça",
+        Haze: "neblina",
+        Dust: "poeira",
+        Fog: "nevoeiro",
+        Sand: "areia",
+        Ash: "cinzas",
+        Squall: "rajadas",
+        Tornado: "tornado"
     };
     return translate[main] || main;
 }
@@ -198,15 +198,93 @@ function fetchWeather(lat, lon) {
         return response.json();
     })
     .then(data => {
+        //* Box CLIMA
         document.getElementById('city').textContent = data.name;
         document.getElementById('temp').textContent = Math.round(data.main.temp - 273.15);
-        document.getElementById('icon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
         document.getElementById('feels_like').textContent = Math.round(data.main.feels_like - 273.15);
         document.getElementById('main').textContent = translateMain(data.weather[0].main);
         document.getElementById('description').textContent = data.weather[0].description;
-        document.getElementById('temp-max').textContent = Math.round(data.temp_max - 273.15);
-        document.getElementById('temp-min').textContent = Math.round(data.temp_min - 273.15);
-    })
+
+        const weatherBox = document.querySelector('.now-weather-box');
+        const weatherBox2 = document.querySelector('.today-weather-box');
+        const condition = data.weather[0].main.toLowerCase();
+        const condition2 = data.weather[0].description;
+        const now = new Date();
+        const hour = now.getHours();
+        weatherBox.className = 'now-weather-box';
+
+        for (let n = 1; n < 11; n++) {
+            document.getElementById(`hour${n}`).textContent = hour + n + "H";
+        }
+        
+
+        if (hour >= 6 && hour <= 18) {
+            weatherBox2.classList.add("today-weather-box-day")
+            if (condition.includes('clear')) {
+                weatherBox.classList.add('clear');
+                document.getElementById('icon').src = "../assets/main/sun.png";
+            } else if (condition.includes('clouds') && condition2.includes("algumas nuvens") 
+                || condition2.includes("nuvens dispersas") 
+                || condition2.includes("parcialmente nublado") || condition2.includes("nuvens quebradas")) {
+                weatherBox.classList.add('clouds');
+                document.getElementById('icon').src = "../assets/main/cloudy-day.png";
+            } else if (condition.includes('clouds') && condition2.includes("nublado")) {
+                weatherBox.classList.add('clouds');
+                document.getElementById('icon').src = "../assets/main/cloud.png";
+            } else if (condition.includes('rain')) {
+                weatherBox.classList.add('rain');
+                document.getElementById('icon').src = "../assets/main/rain.png";
+            } else if (condition.includes('thunderstorm')) {
+                weatherBox.classList.add('thunderstorm');
+                document.getElementById('icon').src = "../assets/main/thunder.png";
+            } else if (condition.includes('snow')) {
+                weatherBox.classList.add('snow');
+                document.getElementById('icon').src = "../assets/main/snowy.png";
+            } else if (condition.includes('drizzle')) {
+                weatherBox.classList.add('drizzle');
+                document.getElementById('icon').src = "../assets/main/sun-drizzle.png";
+            } else if (condition.includes('mist') || condition.includes('fog') || condition.includes('Smoke')
+                || condition.includes('Haze') || condition.includes('Dust') || condition.includes('Sand')
+                || condition.includes('Ash') || condition.includes('Squall') || condition.includes('Tornado')){
+                weatherBox.classList.add('mist');
+                document.getElementById('icon').src = "../assets/main/fog.png";
+            }
+
+        } else {
+            weatherBox2.classList.add("today-weather-box-night")
+            if (condition.includes('clear')) {
+                weatherBox.classList.add('clear-night');
+                document.getElementById('icon').src = "../assets/main/moon.png";
+            } else if (condition.includes('clouds') && condition2.includes("algumas nuvens") 
+                || condition2.includes("nuvens dispersas") 
+                || condition2.includes("parcialmente nublado")) {
+                weatherBox.classList.add('clouds');
+                document.getElementById('icon').src = "../assets/main/night-cloud.png";
+            } else if (condition.includes('clouds') && condition2.includes("nublado")) {
+                weatherBox.classList.add('clouds');
+                document.getElementById('icon').src = "../assets/main/cloud.png";
+            } else if (condition.includes('rain')) {
+                weatherBox.classList.add('rain-night');
+                document.getElementById('icon').src = "../assets/main/rain.png";
+            } else if (condition.includes('thunderstorm')) {
+                weatherBox.classList.add('thunderstorm-night');
+                document.getElementById('icon').src = "../assets/main/thunder.png";
+            } else if (condition.includes('snow')) {
+                weatherBox.classList.add('snow-night');
+                document.getElementById('icon').src = "../assets/main/snowy.png";
+            } else if (condition.includes('drizzle')) {
+                weatherBox.classList.add('drizzle-night');
+                document.getElementById('icon').src = "../assets/main/night-drizzle.png";
+            } else if (condition.includes('mist') || condition.includes('fog') || condition.includes('Smoke')
+                || condition.includes('Haze') || condition.includes('Dust') || condition.includes('Sand')
+                || condition.includes('Ash') || condition.includes('Squall') || condition.includes('Tornado')){
+                weatherBox.classList.add('mist-night');
+                document.getElementById('icon').src = "../assets/main/fog.png";
+            }
+
+            //* CLIMA DE HOJE
+
+        }})
     .catch(error => {
         console.error('Erro:', error);
     });

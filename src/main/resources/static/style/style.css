@@ -471,6 +471,7 @@ body.dark-theme .login-button:hover {
     padding: 6vh;
 }
 .now-weather-box {
+    color: white;
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
@@ -1092,25 +1093,96 @@ body.dark-theme .footer-section ul li a:hover {
 
 
 /** DENTRO DAS BOXES DE CLIMA */
-
+/** CLIMA AGORA*/
 .now-weather-box #city{
     font-size: 30px;
-
 }
 
 .temp-container {
     display: flex;
     align-items: center;     
     justify-content: center; 
-    gap: 4px;                
-    font-size: 6rem;         
+    gap: 10px;                
+    font-size: 6rem;  
+    margin-top: 1rem;   
 }
   
 .temp-container img {
-    width: 10rem;             
+    width: 8rem;             
     height: auto;
 }
 
 .now-weather-box .feels_like-container {
+    margin-top: 1.5rem;
     margin-bottom: 10px;
+}
+
+.clear {
+  background: linear-gradient(to bottom right, #a6ceff, #5fb7ff); /* Céu limpo suave */
+}
+.clouds {
+  background: linear-gradient(to bottom right, #acd5f0, #6284a3); /* Nublado claro */
+}
+.rain {
+  background: linear-gradient(to bottom right, #8ba3ad, #4d6c7e); /* Chuva suave */
+}
+.thunderstorm {
+  background: linear-gradient(to bottom right, #8c9399, #3d5561); /* Tempestade sutil */
+}
+.snow {
+  background: linear-gradient(to bottom right, #b3d9ff, #92c4f0); /* Neve leve */
+}
+.drizzle {
+  background: linear-gradient(to bottom right, #a1d0fa, #5275a1); /* Garoa neutra */
+}
+.mist, .fog {
+  background: linear-gradient(to bottom right, #ced2d8, #87b0cf); /* Névoa clara */
+}
+
+.clear-night {
+  background: linear-gradient(to bottom right, #2c2a98, #1e1569); /* Céu limpo suave */
+}
+.clouds-night {
+  background: linear-gradient(to bottom right, #505177, #272366); /* Nuvens durante a noite */
+}
+.rain-night {
+  background: linear-gradient(to bottom right, #44425f, #1e1853); /* Chuva suave durante a noite */
+}
+.thunderstorm-night {
+  background: linear-gradient(to bottom right, #1f1e2d, #15154e); /* Tempestade sutil durante a noite */
+}
+.snow-night {
+  background: linear-gradient(to bottom right, #5a5494, #25259d); /* Neve leve à noite */
+}
+.drizzle-night {
+  background: linear-gradient(to bottom right, #453f6e, #312864); /* Garoa leve à noite */
+}
+
+.mist-night, .fog-night {
+  background: linear-gradient(to bottom right, #525172, #33314a); /* Névoa clara à noite */
+}
+
+
+/** CLIMAS DE HOJE */
+.today-weather-box-night {
+    background: linear-gradient(to bottom right, #2c2a98, #1e1569);
+}
+.today-weather-box-day {
+    background: linear-gradient(to bottom right, #a6ceff, #5fb7ff);
+}
+.schedules {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    gap: 16px;
+    border-radius: 12px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.schedules span {
+    font-size: 20px;
+    padding: 8px 12px;
+    font-weight: bold;
 }
