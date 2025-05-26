@@ -6,7 +6,7 @@ Umbrella é um aplicativo web de previsão do tempo desenvolvido com foco em sim
 
 ![screenshot](/src/main/resources/static/assets/md/print-dia.jpg)
 ![screenshot](/src/main/resources/static/assets/md/print-noite.jpg)
-![screenshot](/src/main/resources/static/assets/md/print-menu.jpg)
+![screenshot](/src/main/resources/static/assets/md/print-login.jpg)
 
 
 ## 🧪 Status
